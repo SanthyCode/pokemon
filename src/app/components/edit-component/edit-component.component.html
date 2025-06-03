@@ -1,0 +1,27 @@
+<div class="modal-backdrop">
+  <div class="modal-content">
+    <h3>Editar Pokémon</h3>
+    <form (ngSubmit)="submitForm()">
+      <label>
+        Nombre:
+        <input [(ngModel)]="pokemonData.name" name="name" />
+      </label>
+      <label>
+        Altura:
+        <input [(ngModel)]="pokemonData.height" name="height" type="number" />
+      </label>
+      <label>
+        Peso:
+        <input [(ngModel)]="pokemonData.weight" name="weight" type="number" />
+      </label>
+      <label>
+        Tipos:
+        <input [(ngModel)]="pokemonData.types" name="types" />
+      </label>
+      <div class="btn">
+        <button type="submit">Guardar</button>
+        <button type="button" (click)="closeModal()">Cancelar</button>
+      </div>
+    </form>
+  </div>
+</div>

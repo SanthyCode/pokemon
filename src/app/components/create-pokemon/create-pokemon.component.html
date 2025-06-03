@@ -1,0 +1,25 @@
+<div class="modal">
+  <h2>Crear nuevo Pokémon</h2>
+
+  <form (ngSubmit)="submitForm()" #pokemonForm="ngForm">
+    <label>Nombre:</label>
+    <input type="text" [(ngModel)]="newPokemon.name" name="name" required />
+
+    <label>Altura:</label>
+    <input type="number" [(ngModel)]="newPokemon.height" name="height" required />
+
+    <label>Peso:</label>
+    <input type="number" [(ngModel)]="newPokemon.weight" name="weight" required />
+
+    <label>Sprites URL:</label>
+    <input type="text" [(ngModel)]="newPokemon.sprites" name="sprites" required />
+
+    <label>Tipos (separados por coma):</label>
+    <input type="text" [(ngModel)]="typesString" name="types" />
+    
+    <div class="btn">
+      <button type="submit">Crear</button>
+      <button type="button" (click)="closeModal()">Cancelar</button>
+    </div>
+  </form>
+</div>

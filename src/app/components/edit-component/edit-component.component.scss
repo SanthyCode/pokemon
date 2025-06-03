@@ -1,0 +1,48 @@
+.modal-backdrop {
+  position: fixed;
+  top: 20%;
+  left: 25%;
+  width: 50%;
+  height: 40%;
+  background-color: rgb(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+}
+
+.modal-content {
+  height: 100%;
+  width: 70%;
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    color: #FFF;
+    font-weight: 700;
+  }
+}
+
+.btn {
+  display: flex ;
+    gap: 8px;
+    button {
+        padding: 8px;
+        border-radius: 8px;
+        width: 80px;
+        background-color: #b4b4b4;
+        border: transparent;
+    }
+    button:hover {
+        background-color: #787878;
+    }
+}
+
+.modal-container {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 400px;
+}

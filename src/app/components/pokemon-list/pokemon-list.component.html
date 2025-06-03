@@ -1,0 +1,51 @@
+<main>
+  <section>
+    <h1>API POKEMON</h1>
+
+    <div class="btn-create">
+      <button (click)="showCreateModal = true">Create new pokemon</button>
+    </div>
+
+    <div class="content">
+      @if (pokemons.length > 0) {
+        @for (pokemon of pokemons; track pokemon.id) {
+          @if(pokemon.active) {
+            <article class="card">
+              <h3>{{ pokemon.name }}</h3>
+              <img [src]="pokemon.sprites" [alt]="pokemon.name" />
+
+              <div class="types">
+                @for (type of pokemon.types; track type) {
+                  <span>{{ type }}</span>
+                }
+              </div>
+
+              <div class="btn">
+                <button (click)="openEdit(pokemon)">Editar</button>
+                <button (click)="deletePokemon(pokemon)">Delete</button>
+              </div>
+            </article>
+          }
+        }
+      } @else {
+        <p>No hay items</p>
+      }
+    </div>
+
+    <!-- Este botón es duplicado, puedes quitarlo si ya lo tienes arriba -->
+    <!-- <button>Create new pokemon</button> -->
+  </section>
+
+  <app-edit-component
+    *ngIf="showModal"
+    [pokemonData]="selectedPokemon!"
+    (onClose)="closeModal()"
+    (onSubmit)="savePokemon($event)">
+  </app-edit-component>
+
+  <app-create-pokemon
+    *ngIf="showCreateModal"
+    (onClose)="showCreateModal = false"
+    (onCreate)="createPokemon($event)">
+  </app-create-pokemon>
+</main>
